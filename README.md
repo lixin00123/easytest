@@ -1,1 +1,1 @@
-Automated Testing with GitHub Actions
+A simple Python project for automated testing using GitHub Actions
