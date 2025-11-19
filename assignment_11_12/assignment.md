@@ -1,44 +1,44 @@
-# Sprint Goal（冲刺目标）
+# 1. Sprint Goal（冲刺目标）
 
-EN: Sprint Goal: Implement core pet adoption request workflow, enabling users to submit adoption requests through the system.
-CN: 冲刺目标：实现宠物领养请求的核心流程，使用户能够通过系统提交领养申请。
-
----
-
-# Mini-ADR（迷你架构决策记录）
-
-Decision（决策）:
-EN: Use a REST-based API design.
-CN: 使用基于 REST 的 API 设计。
-
-Reason（原因）:
-EN: It is simple, widely used, and easy to integrate with frontend applications.
-CN: 它简单易用，应用广泛，并且易于与前端集成。
-
-Consequence（结果）:
-EN: Faster development speed and a consistent structure for future endpoints.
-CN: 开发速度更快，并为未来的端点保持一致结构。
+EN: Sprint Goal: Implement and test a simple addition function that correctly returns the sum of two numbers.  
+CN: 冲刺目标：实现并测试一个简单的加法函数，能够正确返回两个数字的和。
 
 ---
 
-# Mini-API Description（迷你 API 描述）
+# 2. Mini-ADR（迷你架构决策记录）
 
-Endpoint（接口）:
-EN: POST /adoptions/request
-CN: POST /adoptions/request（提交领养请求）
+Decision（决策）：  
+EN: Use Python and pytest to test the addition function.  
+CN: 使用 Python 和 pytest 来测试加法函数。
 
-Request（请求格式）:
-EN: { pet_id, user_id, message }
-CN: { pet_id, user_id, message }（包含宠物 ID、用户 ID、留言）
+Reason（原因）：  
+EN: They are simple, already configured in the project, and suitable for small exercises.  
+CN: 它们简单易用，已经在项目中配置好，非常适合小型练习。
 
-Success（成功响应）:
-EN: 201 Created
-CN: 201 Created（创建成功）
+Consequence（结果）：  
+EN: Enables quick feedback on whether the addition function works correctly.  
+CN: 可以快速反馈加法函数是否工作正确。
 
-Fail（失败响应）:
-EN: 400 Bad Request
-CN: 400 Bad Request（错误请求）
+---
 
-Description（说明）:
-EN: Creates a new adoption request submitted by a registered user.
-CN: 用于创建注册用户提交的新宠物领养申请。
+# 3. Mini-API Description（迷你 API 描述）
+
+Endpoint（接口）：  
+EN: POST /add  
+CN: POST /add（加法计算接口）
+
+Request（请求）：  
+EN: { "a": number, "b": number }  
+CN: { "a": 数字, "b": 数字 }（两个需要相加的数字）
+
+Success（成功响应）：  
+EN: 200 OK, { "result": a + b }  
+CN: 200 OK，返回 { "result": a + b }（结果为两数之和）
+
+Fail（失败响应）：  
+EN: 400 Bad Request (if parameters are missing or invalid)  
+CN: 400 Bad Request（当参数缺失或无效时）
+
+Description（说明）：  
+EN: Calculates the sum of two numbers and returns the result.  
+CN: 计算两个数字的和，并返回计算结果。
